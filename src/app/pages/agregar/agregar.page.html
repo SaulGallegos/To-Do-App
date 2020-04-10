@@ -20,8 +20,8 @@
       <ion-label>To Do</ion-label>
     </ion-list-header>
 
-    <ion-item *ngFor="let item of lista.items">
-      <ion-checkbox slot="start" [(ngModel)]="item.completado" class="animated fadeInDown"></ion-checkbox>
+    <ion-item *ngFor="let item of lista.items" class="animated fadeInDown">
+      <ion-checkbox slot="start" [(ngModel)]="item.completado" (ionChange)="cambioCheck(item)"></ion-checkbox>
       <ion-label>{{item.desc}}</ion-label>
     </ion-item>
   </ion-list>
